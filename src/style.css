@@ -1,1 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+#excuse {
+  font-size: 50px;
+  margin: 25% 0 25%;
+}
