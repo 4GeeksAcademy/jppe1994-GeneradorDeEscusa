@@ -13,13 +13,13 @@ window.onload = function() {
 
 function generadorDeEscusa() {
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let numAleatorio = Math.floor(Math.random() * 4);
+  let numAleatorioWho = getNumeroAleatorio(who);
 
   let action = ["ate", "peed", "crushed", "broke"];
-  let numAleatorioAction = Math.floor(Math.random() * 4);
+  let numAleatorioAction = getNumeroAleatorio(action);
 
   let what = ["my homework", "the keys", "the car"];
-  let numAleatorioWhat = Math.floor(Math.random() * 3);
+  let numAleatorioWhat = getNumeroAleatorio(what);
 
   let when = [
     "before the class",
@@ -28,10 +28,10 @@ function generadorDeEscusa() {
     "during my lunch",
     "while I was praying"
   ];
-  let numAleatorioWhen = Math.floor(Math.random() * 5);
-
+  //let numAleatorioWhen = Math.floor(Math.random() * when.length);//
+  let numAleatorioWhen = getNumeroAleatorio(when);
   return (
-    who[numAleatorio] +
+    who[numAleatorioWho] +
     " " +
     action[numAleatorioAction] +
     " " +
@@ -39,4 +39,8 @@ function generadorDeEscusa() {
     " " +
     when[numAleatorioWhen]
   );
+}
+
+function getNumeroAleatorio(arrayElementos) {
+  return Math.floor(Math.random() * arrayElementos.length);
 }
