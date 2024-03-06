@@ -5,13 +5,8 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
-  //write your code here
-  document.querySelector("#excuse").innerHTML = generadorDeEscusa();
-  console.log("Hello Rigo from the console!");
-};
-
 function generadorDeEscusa() {
+  
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let numAleatorioWho = getNumeroAleatorio(who);
 
@@ -20,27 +15,20 @@ function generadorDeEscusa() {
 
   let what = ["my homework", "the keys", "the car"];
   let numAleatorioWhat = getNumeroAleatorio(what);
-
-  let when = [
-    "before the class",
-    "right on time",
-    "when I finished",
-    "during my lunch",
-    "while I was praying"
-  ];
-  //let numAleatorioWhen = Math.floor(Math.random() * when.length);//
+  
+  let when = ["before the class", "right on time", "when I finished", "during my lunch","while I was praying"];
   let numAleatorioWhen = getNumeroAleatorio(when);
-  return (
-    who[numAleatorioWho] +
-    " " +
-    action[numAleatorioAction] +
-    " " +
-    what[numAleatorioWhat] +
-    " " +
-    when[numAleatorioWhen]
+
+      return ( who[numAleatorioWho] + " " + action[numAleatorioAction] + " " + what[numAleatorioWhat] + " " + when[numAleatorioWhen]
   );
 }
 
 function getNumeroAleatorio(arrayElementos) {
-  return Math.floor(Math.random() * arrayElementos.length);
+      return Math.floor(Math.random() * arrayElementos.length);
 }
+
+window.onload = function() {
+  //write your code here
+  document.querySelector("#excuse").innerHTML = generadorDeEscusa();
+        console.log("Hello Rigo from the console!");
+};
